@@ -49,41 +49,41 @@ class Absensi extends Page implements HasForms, HasTable
                     ->orderBy('created_at', 'desc')
             )
             ->columns([
-                TextColumn::make('created_at'),
-                // TextColumn::make('created_at')
-                //     ->label('Dibuat')
-                //     ->formatStateUsing(
-                //         fn ($state) => Carbon::parse($state)->translatedFormat('l')
-                //     )
-                //     ->description(
-                //         fn ($state) => Carbon::parse($state)->translatedFormat('j F Y')
-                //     ),
 
-                // TextColumn::make('absen_datang')
-                //     ->formatStateUsing(
-                //         fn ($state) => Carbon::parse($state)->translatedFormat('H:i')
-                //     ),
-                // TextColumn::make('absen_pulang')
-                //     ->formatStateUsing(
-                //         fn ($state) => Carbon::parse($state)->translatedFormat('H:i')
-                //     ),
-                // TextColumn::make('alasan')
-                //     ->words(2, '')
-                //     ->searchable(),
-                // TextColumn::make('status')
-                //     ->badge()
-                //     ->color(fn (string $state): string => match ($state) {
-                //         'hadir' => 'success',
-                //         'izin' => 'warning',
-                //         'tidak hadir' => 'danger',
-                //         'proses' => 'warning'
-                //     })
-                //     ->icon(fn (string $state): string => match ($state) {
-                //         'hadir' => 'heroicon-o-check-circle',
-                //         'izin' => 'heroicon-o-envelope',
-                //         'tidak hadir' => 'heroicon-o-x-circle',
-                //         'proses' => 'heroicon-o-clock'
-                //     }),
+                TextColumn::make('created_at')
+                    ->label('Dibuat')
+                    ->formatStateUsing(
+                        fn ($state) => Carbon::parse($state)->translatedFormat('l')
+                    )
+                    ->description(
+                        fn ($state) => Carbon::parse($state)->translatedFormat('j F Y')
+                    ),
+
+                TextColumn::make('absen_datang')
+                    ->formatStateUsing(
+                        fn ($state) => Carbon::parse($state)->translatedFormat('H:i')
+                    ),
+                TextColumn::make('absen_pulang')
+                    ->formatStateUsing(
+                        fn ($state) => Carbon::parse($state)->translatedFormat('H:i')
+                    ),
+                TextColumn::make('alasan')
+                    ->words(2, '')
+                    ->searchable(),
+                TextColumn::make('status')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'hadir' => 'success',
+                        'izin' => 'warning',
+                        'tidak hadir' => 'danger',
+                        'proses' => 'warning'
+                    })
+                    ->icon(fn (string $state): string => match ($state) {
+                        'hadir' => 'heroicon-o-check-circle',
+                        'izin' => 'heroicon-o-envelope',
+                        'tidak hadir' => 'heroicon-o-x-circle',
+                        'proses' => 'heroicon-o-clock'
+                    }),
             ])
             ->headerActions([
                 CreateAction::make()

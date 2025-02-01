@@ -33,14 +33,14 @@ class DatabaseSeeder extends Seeder
         //     'division_id' => 1,
         // ]);
 
-        // Division::factory(10)->create();
         // User::factory()->create([
         //     'name' => 'HRD',
         //     'email' => 'hrd@mail.com',
         //     'is_hrd' => true,
         //     'division_id' => 2,
         // ]);
-        // User::factory(50)->create();
-        Attendance::factory(50)->create();
+        Division::factory(10)->create();
+        User::factory(20)->create();
+        Attendance::factory(100)->create();
     }
 }

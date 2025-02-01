@@ -27,8 +27,8 @@ class AttendanceFactory extends Factory
             'alasan' => in_array($status, ['izin', 'tidak hadir']) ? fake()->sentence(3) : null,
 
             'status' => $status,
-            // 'user_id' => $users->random()->id,
-            'user_id' => 6,
+            'user_id' => $users->random()->id,
+            // 'user_id' => 6,
             'created_at' => fake()->dateTimeBetween('-12 week', '+1 week'),
         ];
     }
